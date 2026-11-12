@@ -1,0 +1,123 @@
+{
+  "base_sha": "8bc263a9bf52071c8de15a861b3c23caa909094d",
+  "change_source": "compare",
+  "changed_component_count": 4,
+  "changed_components": [
+    ".github",
+    "[root]",
+    "src",
+    "tests"
+  ],
+  "changed_file_count": 29,
+  "changed_function_count": 48,
+  "changed_functions": [
+    "Tracker::cleanup_hook_decisions",
+    "Tracker::cleanup_old",
+    "Tracker::new",
+    "Tracker::new_in_memory",
+    "borrowed_credential::a_call_through_the_daemon_ignores_the_proxy_environment",
+    "call_anthropic",
+    "call_google",
+    "call_openai",
+    "classify_batch",
+    "compute_hash_bytes",
+    "configured_history_days",
+    "connect_timeout",
+    "content_hash",
+    "count_projects",
+    "direct_global_timeout",
+    "extract_attr_value",
+    "fallback_command_args",
+    "generate_device_hash",
+    "get",
+    "global_timeout",
+    "health_check_with_timeout",
+    "http_get",
+    "parse_usize_attr",
+    "post_json",
+    "push_content",
+    "random_salt",
+    "read_source",
+    "rtk_md_payload_digest",
+    "run_fallback",
+    "scan_mtp_kind_in_file",
+    "send_erasure_request",
+    "send_ping",
+    "short_hash",
+    "terminal_text",
+    "tests::batch_request_carries_the_bearer_key_and_parses_the_reply",
+    "tests::health_check_reaches_a_daemon_on_any_address_despite_a_proxy",
+    "tests::health_check_reads_a_bounded_body",
+    "tests::test_compute_hash_bytes_is_lowercase_sha256sum_format",
+    "tests::test_fallback_rejects_unrecognized_leading_flag",
+    "tests::test_fallback_skips_supported_global_flags_before_command",
+    "tests::test_parse_test_from_text_counts_distinct_csprojs_without_run_lines",
+    "tests::test_parse_test_from_text_counts_distinct_projects_across_restore_and_warning_lines",
+    "tests::test_parse_test_from_text_counts_distinct_projects_despite_warnings",
+    "tests::test_parse_test_from_text_counts_test_projects_not_referenced_libraries",
+    "tests::test_scan_mtp_kind_reads_the_value_around_markup",
+    "tests::test_scan_mtp_kind_resolves_character_references",
+    "with_global_timeout",
+    "xml_reader"
+  ],
+  "deploy_targets": [],
+  "head_sha": "2a786dca60fa4759f4f8381262a6a3b98256667a",
+  "impacted_test_count": 2,
+  "impacted_tests": [
+    "tests/fallback_global_flags_test.rs",
+    "tests/fallback_integrity_test.rs"
+  ],
+  "lists_truncated": false,
+  "reason": "Some changed source files have no confirmed impacted test; run the repository's full test suite.",
+  "requires_full_suite": true,
+  "schema_version": 1,
+  "test_selection": [
+    {
+      "changed_file_count": 1,
+      "changed_files": [
+        "tests/fallback_global_flags_test.rs"
+      ],
+      "changed_files_truncated": false,
+      "language": "rust",
+      "selected_by": [
+        "changed_test"
+      ],
+      "test_file": "tests/fallback_global_flags_test.rs"
+    },
+    {
+      "changed_file_count": 1,
+      "changed_files": [
+        "tests/fallback_integrity_test.rs"
+      ],
+      "changed_files_truncated": false,
+      "language": "rust",
+      "selected_by": [
+        "changed_test"
+      ],
+      "test_file": "tests/fallback_integrity_test.rs"
+    }
+  ],
+  "unresolved_file_count": 20,
+  "unresolved_files": [
+    "src/cmds/dotnet/binlog.rs",
+    "src/cmds/dotnet/dotnet_cmd.rs",
+    "src/cmds/dotnet/dotnet_trx.rs",
+    "src/core/classify.rs",
+    "src/core/http.rs",
+    "src/core/mod.rs",
+    "src/core/pipeline_cmd.rs",
+    "src/core/pipeline_remote.rs",
+    "src/core/retriever.rs",
+    "src/core/task_cmd.rs",
+    "src/core/tee_file.rs",
+    "src/core/telemetry.rs",
+    "src/core/telemetry_cmd.rs",
+    "src/core/tracking.rs",
+    "src/discover/mod.rs",
+    "src/discover/report.rs",
+    "src/hooks/init/codex.rs",
+    "src/hooks/integrity.rs",
+    "src/lib.rs",
+    "src/llm_proxy.rs"
+  ]
+}

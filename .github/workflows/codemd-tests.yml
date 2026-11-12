@@ -1,0 +1,38 @@
+# Written by CodeMD (codemd.dev) on its own branch to run tests.
+name: CodeMD test run
+'on':
+  push:
+    branches:
+    - codemd-test-runs
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      CARGO_TERM_COLOR: always
+    steps:
+    - uses: actions/checkout@v4
+    - name: 'CodeMD test 1/2: tests/fallback_global_flags_test.rs'
+      working-directory: ${{ github.workspace }}
+      run: bash .codemd/run-test.sh 0
+      timeout-minutes: 10
+      continue-on-error: true
+    - name: 'CodeMD test 2/2: tests/fallback_integrity_test.rs'
+      working-directory: ${{ github.workspace }}
+      run: bash .codemd/run-test.sh 1
+      timeout-minutes: 10
+      continue-on-error: true
+    - name: 'CodeMD: determine test result'
+      if: always()
+      working-directory: ${{ github.workspace }}
+      run: bash .codemd/run-test.sh finalize
+    - name: 'CodeMD: keep coverage reports'
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: codemd-coverage-reports
+        path: codemd-reports
+        if-no-files-found: ignore
+        retention-days: 90
